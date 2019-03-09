@@ -4,10 +4,17 @@ This is a small package to download and parse out the [MNIST Digits Dataset](htt
 
     import mnist
 
-    m = mnist.Mnist(dataset='train')
+    m = mnist.Mnist(dir='/tmp/mnist')
 
-    m.download(destdir='/tmp')
-
-    y, x = m.read(output='pandas')
+    x_train = m.xtrain
+    y_train = m.ytrain
+    x_test  = m.xtest
+    y_test  = m.ytest
     
-    # y, x = m.read(output='numpy')
+    # To load batches from a generator
+   
+    # dataset one of 'train', 'test', all 
+    batch = m.batch(batch_size=1000, dataset='train')
+    
+    y, x = next(batch)
+    
