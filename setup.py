@@ -7,10 +7,10 @@ setup(
     version="0.1",
     description="A package to download the MNIST digits dataset from Yan LeCunn's website",
     author="Patrick McCarthy",
-    author_email="patrickjmc@gmail.com",
+    author_email="github@patrickmccarthy.cc",
     license='GPL-3.0',
     py_modules=['mnist',],
-    install_requires=['numpy', 'pandas',],
+    install_requires=['numpy', 'requests',],
     zip_safe=True,
     long_description=open('README.md').read(),
 )
